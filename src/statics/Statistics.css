@@ -1,0 +1,80 @@
+.Pokemon-statistics {
+    display: flex;
+    margin: 47% 13.5%;
+    margin-bottom: 0;
+    max-width: 21vw;
+    height: 15vw;
+    border-radius: 5%;
+    font-size: 1vw;
+}
+
+.Pokemon-statistics div {
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    display: flex;
+    margin: 2px;
+}
+
+.Pokemon-statistics-names {
+    padding: 0;
+    margin: 0;
+    margin-top: 2.7vw;
+    margin-left: 4px;
+    min-width: 9.5vw;
+    font-weight: bold;
+}
+
+.Pokemon-statistics li {
+    min-width: 100%;
+    margin: 0.5em auto;
+}
+
+.Pokemon-statistics-stats li span{
+    position: absolute;  
+    margin-top: 2%;
+    margin-left: 1%;
+    color:rgb(75, 204, 0);
+    background:rgba(0,0,0,.9);
+    padding: 0.75em;
+    border-radius:3px;
+    box-shadow:0 0 2px rgba(0,0,0,.5); 
+    transform:scale(0) rotate(-12deg);  
+    opacity:0;     
+    transition:all .25s;       
+}
+
+.Pokemon-statistics-stats li:hover,
+.Pokemon-statistics-stats li:focus{
+    cursor: help;
+}
+
+.Pokemon-statistics-stats li:hover span,
+.Pokemon-statistics-stats li:focus span{
+    transform:scale(1) rotate(0);        
+    opacity:1;
+}
+
+.Pokemon-statistics-stats {
+    flex-grow: 1;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .Pokemon-statistics {
+        position: absolute;
+        margin: 21.5vw 6vw;
+        min-width: 31.5vw;
+        min-height: 27vh;
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Pokemon-statistics {
+        margin: 23.5vw 7vw;
+        min-width: 34.5vw;
+    }
+}
