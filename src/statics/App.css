@@ -32,6 +32,27 @@ html, body {
   position: absolute; z-index: 0;
 }
 
+.App-pokedex-light{
+  position: absolute;
+  top: calc(2.1vw + 26px); left: 2.8vw;
+  width: 5.5vw; height: 5.5vw;
+  background-color: rgba(24, 88, 228, 0.3);
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.flash-animation{
+  animation-name: flashing;
+  animation-duration: .85s;
+  animation-iteration-count: 3;
+}
+
+@keyframes flashing {
+  0%   { box-shadow: 0; }
+  60%  { box-shadow: 0px 0px 7vw rgb(194, 206, 255); }
+  100% { box-shadow: 0; }
+}
+
 ul{ list-style-type: none;}
 h1, h2, h3 {
   margin: 0; padding:0;
@@ -48,6 +69,10 @@ h2{ font-size: 1vw; }
     margin-left: 55vw;
     width: 28vw; 
   }
+  .App-pokedex-light{
+    top: calc(3.2vw + 26px); left: 4.3vw;
+    width: 8.3vw; height: 8.3vw;
+  }
 }
 
 @media screen and (max-width: 768px){
@@ -56,5 +81,9 @@ h2{ font-size: 1vw; }
     top: 22px;
     margin: 0 60vw;
     width: 32vw;
+  }
+  .App-pokedex-light{
+    top: calc(3.6vw + 26px); left: 4.8vw;
+    width: 9vw; height: 9vw;
   }
 }

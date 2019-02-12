@@ -32,8 +32,8 @@
 .Pokemon-types {
   display: flex;
   align-items: center;
-  margin: 6.6vw 4.2vw;
-  height: 3.7vw;
+  margin: 6.4vw 4vw;
+  height: 3.6vw;
   text-transform: uppercase;
 }
 

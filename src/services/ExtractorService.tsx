@@ -40,7 +40,7 @@ export function extractStatsComparisonFromTab(tabToDecompose: any) {
             {element[2].map((stat: any, index2:number) => {
                 return <li key={index+": "+index2}> 
                     { Math.round( stat[1] / element[1] )} 
-                    <span>Average statistics of the type {element[0]}</span></li>
+                    <span>Average statistics of {element[0]} type</span></li>
             })}     
         </ul>)}
     </div>)
