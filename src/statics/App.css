@@ -6,6 +6,10 @@ html, body {
   background-repeat: no-repeat;
   font-family: 'Times New Roman', Times, serif;
 }
+ul{ list-style-type: none;}
+h1, h2 { margin: 0; padding:0; }
+h1{ font-size: 1.3vw; }
+h2{ font-size: 1vw; }
 
 .App {
   position: relative;
@@ -13,6 +17,11 @@ html, body {
   margin: 0 20%;
   padding-top: 26px;
 }
+
+
+/*-----------------------------------------------------------------------
+ *------------------------------SEARCH BAR-------------------------------
+ *----------------------------------------------------------------------*/
 
 .Search{
   position: absolute; z-index: 3;
@@ -28,37 +37,100 @@ html, body {
   margin-right: 2vw;
 }
 
-.App-pokedex {
-  position: absolute; z-index: 0;
+
+/*-----------------------------------------------------------------------
+ *------------------------------BACKGROUND-------------------------------
+ *----------------------------------------------------------------------*/
+
+.Pokedex-bg { position: absolute; z-index: 0; }
+
+.Pokedex-button{
+  position: absolute; 
+  z-index: 3;
+  top: calc(33.2vw + 26px); left: 2.3vw;
+  width: 3vw; height: 3vw;
+  border-radius: 50%;
+  background: rgb(58, 58, 58);
+  border: 2px solid black;
+}
+.Pokedex-button:hover{
+  cursor: pointer;
+  background-color: rgb(66, 66, 66);
+}
+.Pokedex-button:active{
+  background-color: transparent;
+  border: none;
 }
 
-.App-pokedex-light{
+[class*="Pokedex-light"]{
   position: absolute;
+  top: calc(2vw + 26px);
+  width: 1.8vw; height: 1.82vw;
+  border-radius: 50%;
+  border: 0.05vw solid black;
+}
+
+.Pokedex-light-blue{
   top: calc(2.1vw + 26px); left: 2.8vw;
   width: 5.5vw; height: 5.5vw;
-  background-color: rgba(24, 88, 228, 0.3);
-  border-radius: 50%;
-  border: 1px solid black;
 }
+.Pokedex-light-red{ left: 17.1%; }
+.Pokedex-light-yellow{ left: 21.7%; }
+.Pokedex-light-green{ left: 26.3%; }
 
-.flash-animation{
-  animation-name: flashing;
-  animation-duration: .85s;
+/*-----------------------------------------------------------------------
+ *------------------------------ANIMATIONS-------------------------------
+ *----------------------------------------------------------------------*/
+
+.flash-animation-blue{
+  animation-name: blueFlash;
+  animation-duration: .8s;
   animation-iteration-count: 3;
 }
+.flash-animation-red{
+  animation-name: redFlash;
+  animation-duration: .6s;
+}
+.flash-animation-yellow{
+  animation-name: yellowFlash;
+  animation-duration: .6s;
+  animation-delay: .6s;
+}
+.flash-animation-green{
+  animation-name: greenFlash;
+  animation-duration: .6s;
+  animation-delay: 1.2s;
+}
 
-@keyframes flashing {
+@keyframes blueFlash {
   0%   { box-shadow: 0; }
-  60%  { box-shadow: 0px 0px 7vw rgb(194, 206, 255); }
+  60%  { box-shadow: 0px 0px 7vw rgb(195, 226, 255); 
+         background-color: rgba(78, 147, 250, 0.5);}
+  100% { box-shadow: 0; }
+}
+@keyframes redFlash {
+  0%   { box-shadow: 0; }
+  60%  { box-shadow: 0px 0px 3vw rgb(255, 195, 195); 
+         background-color: rgba(255, 0, 0, .5);}
+  100% { box-shadow: 0; }
+}
+@keyframes yellowFlash {
+  0%   { box-shadow: 0; }
+  60%  { box-shadow: 0px 0px 3vw rgb(255, 254, 195); 
+         background-color: rgba(255, 255, 0, .5);}
+  100% { box-shadow: 0; }
+}
+@keyframes greenFlash {
+  0%   { box-shadow: 0; }
+  60%  { box-shadow: 0px 0px 3vw rgb(197, 255, 195);
+         background-color: rgba(12, 223, 12, .5);}
   100% { box-shadow: 0; }
 }
 
-ul{ list-style-type: none;}
-h1, h2, h3 {
-  margin: 0; padding:0;
-}
-h1{ font-size: 1.3vw; }
-h2{ font-size: 1vw; }
+
+/*-----------------------------------------------------------------------
+ *--------------------------------TABLETS--------------------------------
+ *----------------------------------------------------------------------*/
 
 @media screen and (max-width: 1024px){
   .html, body{
@@ -69,11 +141,27 @@ h2{ font-size: 1vw; }
     margin-left: 55vw;
     width: 28vw; 
   }
-  .App-pokedex-light{
-    top: calc(3.2vw + 26px); left: 4.3vw;
+  [class*="Pokedex-light"]{
+    width: 2.75vw; height: 2.75vw;
+    top: calc(26px + 3vw);
+  }
+  .Pokedex-light-blue{
+    top: calc(3.1vw + 26px); left: 4.2vw;
     width: 8.3vw; height: 8.3vw;
   }
+  .Pokedex-light-red{ left: 17%; }
+  .Pokedex-light-yellow{ left: 21.7%; }
+  .Pokedex-light-green{ left: 26.3%; }
+  .Pokedex-button{
+    top: calc(26px + 49.9vw); left: 3.6vw;
+    width: 4.4vw; height: 4.4vw;
+  }
 }
+
+
+/*-----------------------------------------------------------------------
+ *--------------------------------PHONES---------------------------------
+ *----------------------------------------------------------------------*/
 
 @media screen and (max-width: 768px){
   .App {margin: 0;} 
@@ -82,8 +170,23 @@ h2{ font-size: 1vw; }
     margin: 0 60vw;
     width: 32vw;
   }
-  .App-pokedex-light{
-    top: calc(3.6vw + 26px); left: 4.8vw;
-    width: 9vw; height: 9vw;
+  [class*="Pokedex-light"]{
+    width: 3.1vw; height: 3.1vw;
+    top: calc(26px + 3.3vw);
+  }
+  .Pokedex-light-blue{
+    top: calc(3.4vw + 26px); left: 4.6vw;
+    width: 9.15vw; height: 9.15vw;
+  }
+  .Pokedex-light-red{ left: 17%; }
+  .Pokedex-light-yellow{ left: 21.6%; }
+  .Pokedex-light-green{ left: 26.2%; }
+  .Pokedex-button{
+    top: calc(26px + 49.9vw); left: 3.6vw;
+    width: 4.4vw; height: 4.4vw;
+  }
+  .Pokedex-button{
+    top: calc(55.5vw + 26px); left: 3.9vw;
+    width: 4.8vw; height: 4.8vw;
   }
 }

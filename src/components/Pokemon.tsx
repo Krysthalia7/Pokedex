@@ -22,15 +22,15 @@ class Pokemon extends React.Component<PokemonProps, PokemonState> {
         this.fetchData = this.fetchData.bind(this);
     }
 
-    componentDidMount() { this.fetchData(this.props.pokemon.url); }
-    componentDidUpdate(prevProps: any) {
+    componentDidMount(): void { this.fetchData(this.props.pokemon.url); }
+    componentDidUpdate(prevProps: any): void {
         const newProps = this.props.pokemon;
         if (newProps !== prevProps.pokemon) {
             this.fetchData(newProps.url);
         }
     }
 
-    fetchData(url: any) {
+    fetchData(url: any): void {
         fetch(this.props.pokemon.url)
             .then((response) => {
                 return response.json();

@@ -6,26 +6,28 @@
 }
 
 .Pokedex-left img {
-  margin-top: 55%;
-  margin-left: 30%;
-  width: 10vw;
-  height: 10vw;
+  position: absolute;
+  margin-top: 16.2vw;
+  margin-left: 8.7vw;
+  width: 10.5vw;
+  height: 10.5vw;
   min-width: 96px;
   min-height: 96px;
 }
 
 .Pokedex-right { color: white; }
-[class*="Pokedex-"] { width: 50%; }
+.Pokedex-right, 
+.Pokedex-left { width: 50%; }
 
 .Pokemon-name {
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  margin-top: 27%;
-  margin-left: 22%;
-  max-width: 32.5%;
-  height: 4vw;
+  margin-top: 34.7vw;
+  margin-left: 6.5vw;
+  max-width: 9.7vw;
+  height: 3.7vw;
   text-transform: capitalize;
 }
 

@@ -24,17 +24,6 @@ class Statistics extends React.Component<StatisticsProps, StatisticsState> {
         this.updateStats = this.updateStats.bind(this);
     }
 
-    resetState(){
-        this.setState({ myStats: [], statsTotal: [], numberPokemonByType: [] });
-    }
-
-    setNewState(newStats: any, typeName: string, nbOfPokemon: number){
-        this.setState({
-            myStats: newStats,
-            statsTotal: this.initializeStatsTotal(typeName, nbOfPokemon, newStats)
-        });
-    }
-
     componentDidUpdate(prevProps: any) {
         const newTypes = this.props.myTypes;
         const newStats = this.props.myStats;
@@ -50,6 +39,17 @@ class Statistics extends React.Component<StatisticsProps, StatisticsState> {
                     }).catch((ex) => console.log('Parsing failed for types', ex))
             })
         }
+    }
+
+    resetState() {
+        this.setState({ myStats: [], statsTotal: [], numberPokemonByType: [] });
+    }
+
+    setNewState(newStats: any, typeName: string, nbOfPokemon: number) {
+        this.setState({
+            myStats: newStats,
+            statsTotal: this.initializeStatsTotal(typeName, nbOfPokemon, newStats)
+        });
     }
 
     initializeStatsTotal(type: string, nbOfPokemon: number, statsOfThePokemon: any) {
@@ -84,7 +84,7 @@ class Statistics extends React.Component<StatisticsProps, StatisticsState> {
         });
     }
 
-    updateStats(aPokemon: any, itsStats:any) {
+    updateStats(aPokemon: any, itsStats: any) {
         return [
             itsStats[0],
             itsStats[1],
@@ -100,8 +100,8 @@ class Statistics extends React.Component<StatisticsProps, StatisticsState> {
     render() {
         return (
             <div className="Pokemon-statistics">
-                { extractStatsFromObj(this.state.myStats) }
-                { extractStatsComparisonFromTab(this.state.statsTotal) }
+                {extractStatsFromObj(this.state.myStats)}
+                {extractStatsComparisonFromTab(this.state.statsTotal)}
             </div>
         );
     }

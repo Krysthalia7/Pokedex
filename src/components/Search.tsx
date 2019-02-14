@@ -21,7 +21,7 @@ class Search extends React.Component<SearchProps, SearchState> {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    componentDidMount() {
+    componentDidMount(): void {
         fetch(`https://pokeapi.co/api/v2/pokemon?limit=300`)
             .then((response) => {
                 return response.json();
