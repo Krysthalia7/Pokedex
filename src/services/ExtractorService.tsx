@@ -10,9 +10,12 @@ export function extractObjectFromObj(objToDecompose: object, myObj: Array<object
 }
 
 export function extractTypesFromObj(objToDecompose: any) {
-    return <div className="Pokemon-types">
-        {objToDecompose.map((obj: any) => 
-            <p key={obj.type.name}>{obj.type.name}</p>)}
+    return <div className="Pokemon-types ">
+        {objToDecompose.map((obj: any, index: number) => 
+            <div key={obj.type.name} >
+                TYPE: {index+1}
+                <p className={obj.type.name}>{obj.type.name}</p>
+            </div>)}
     </div>;
 }
 
@@ -34,7 +37,7 @@ export function extractStatsFromObj(objToDecompose: any) {
 
 export function extractStatsComparisonFromTab(tabToDecompose: any) {
     return (<div> {tabToDecompose.map((element: any, index:number) =>
-        <ul className="Pokemon-statistics-stats" 
+        <ul className={"Pokemon-statistics-stats "+element[0]}
             key={"type"+index}> 
             <p>{element[0]}</p>
             {element[2].map((stat: any, index2:number) => {

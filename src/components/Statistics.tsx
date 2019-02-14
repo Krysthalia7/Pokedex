@@ -24,7 +24,7 @@ class Statistics extends React.Component<StatisticsProps, StatisticsState> {
         this.updateStats = this.updateStats.bind(this);
     }
 
-    componentDidUpdate(prevProps: any) {
+    componentDidUpdate(prevProps: any): void {
         const newTypes = this.props.myTypes;
         const newStats = this.props.myStats;
         if ((newTypes !== prevProps.myTypes) && (newStats !== prevProps.myStats)) {
@@ -41,29 +41,29 @@ class Statistics extends React.Component<StatisticsProps, StatisticsState> {
         }
     }
 
-    resetState() {
+    resetState(): void {
         this.setState({ myStats: [], statsTotal: [], numberPokemonByType: [] });
     }
 
-    setNewState(newStats: any, typeName: string, nbOfPokemon: number) {
+    setNewState(newStats: any, typeName: string, nbOfPokemon: number): void {
         this.setState({
             myStats: newStats,
             statsTotal: this.initializeStatsTotal(typeName, nbOfPokemon, newStats)
         });
     }
 
-    initializeStatsTotal(type: string, nbOfPokemon: number, statsOfThePokemon: any) {
-        let res = this.state.statsTotal;
-        res.push([
+    initializeStatsTotal(type: string, nbOfPokemon: number, statsOfThePokemon: any): any {
+        let newStatsTotal = this.state.statsTotal;
+        newStatsTotal.push([
             type,
             nbOfPokemon,
             statsOfThePokemon.map((statObj: any) =>
                 [statObj.stat.name, 0])
         ]);
-        return res;
+        return newStatsTotal;
     }
 
-    fetchAllPokemonAndUpdateStats(typeToModify: string, allPokemon: any) {
+    fetchAllPokemonAndUpdateStats(typeToModify: string, allPokemon: any): any {
         allPokemon.map((aPokemonObj: any) => {
             fetch(aPokemonObj.pokemon.url)
                 .then((response) => {
@@ -76,7 +76,7 @@ class Statistics extends React.Component<StatisticsProps, StatisticsState> {
         });
     }
 
-    getNewStatsTotal(typeToModify: string, aPokemon: any) {
+    getNewStatsTotal(typeToModify: string, aPokemon: any): any {
         return (this.state.statsTotal).map((typeInfos: any) => {
             if (typeInfos[0] == typeToModify) {
                 return this.updateStats(aPokemon, typeInfos);
@@ -84,7 +84,7 @@ class Statistics extends React.Component<StatisticsProps, StatisticsState> {
         });
     }
 
-    updateStats(aPokemon: any, itsStats: any) {
+    updateStats(aPokemon: any, itsStats: any): Array<any> {
         return [
             itsStats[0],
             itsStats[1],

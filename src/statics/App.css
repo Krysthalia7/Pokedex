@@ -34,7 +34,8 @@ h2{ font-size: 1vw; }
 .Search>*{ 
   width: 100%;
   box-sizing: border-box;
-  margin-right: 2vw;
+  border-radius: 3px;
+  padding: 1%;
 }
 
 
@@ -89,17 +90,17 @@ h2{ font-size: 1vw; }
 }
 .flash-animation-red{
   animation-name: redFlash;
-  animation-duration: .6s;
+  animation-duration: .8s;
 }
 .flash-animation-yellow{
   animation-name: yellowFlash;
-  animation-duration: .6s;
-  animation-delay: .6s;
+  animation-duration: .8s;
+  animation-delay: .8s;
 }
 .flash-animation-green{
   animation-name: greenFlash;
-  animation-duration: .6s;
-  animation-delay: 1.2s;
+  animation-duration: .8s;
+  animation-delay: 1.6s;
 }
 
 @keyframes blueFlash {
@@ -127,6 +128,32 @@ h2{ font-size: 1vw; }
   100% { box-shadow: 0; }
 }
 
+
+/*-----------------------------------------------------------------------
+ *--------------------------------COLORS---------------------------------
+ *----------------------------------------------------------------------*/
+ 
+ .normal{ color: rgb(196, 196, 196); }
+ .fighting{ color: rgb(180, 139, 88); }
+ .flying{ color: rgb(108, 184, 228); }
+ .poison{ color: rgb(175, 61, 252); }
+ .ground{ color: rgb(212, 151, 58); }
+ .rock{ color: rgb(216, 189, 163); }
+ .bug{ color: rgb(198, 235, 67); }
+ .ghost{ color: rgb(137, 134, 182); }
+ .steel{ color: rgb(213, 217, 223); }
+ .fire{ color: rgb(253, 103, 33); }
+ .water{ color: rgb(31, 143, 235); }
+ .grass{ color: rgb(134, 214, 102); }
+ .electric{ color: rgb(248, 229, 53); }
+ .psychic{ color: rgb(218, 129, 163); }
+ .ice{ color: rgb(120, 226, 240); }
+ .dragon{ color: rgb(113, 82, 228); }
+ .dark{ color: rgb(128, 109, 81); }
+ .fairy{ color: rgb(247, 175, 241); }
+ .unknown{ color: white; }
+ .shadow{ color: rgb(160, 146, 137); }
+ 
 
 /*-----------------------------------------------------------------------
  *--------------------------------TABLETS--------------------------------

@@ -29,7 +29,7 @@ class App extends React.Component<{}, AppState> {
     });
     setTimeout(() => { 
         this.setState({ animationPlayed: '' })
-    }, 3000);
+    }, 2500);
   }
 
   getAnimationNameWithColor(colorName: string): string{
@@ -40,7 +40,7 @@ class App extends React.Component<{}, AppState> {
   switchBlueFlashPlayed(): void{
     this.setState({blueFlashPlayed: "flash-animation-blue"});
     setTimeout(() => { this.setState({ blueFlashPlayed: '' })
-    }, 2400);
+    }, 2500);
   }
 
   public render() {
