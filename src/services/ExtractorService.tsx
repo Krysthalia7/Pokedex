@@ -1,4 +1,5 @@
 import * as React from "react";
+import { extractTypesFromObjRefactor } from "./ExtractorServiceRefactor";
 
 export function extractObjectFromObj(objToDecompose: object, myObj: Array<object>) {
     for (let key in objToDecompose) {
@@ -10,6 +11,7 @@ export function extractObjectFromObj(objToDecompose: object, myObj: Array<object
 }
 
 export function extractTypesFromObj(objToDecompose: any) {
+    extractTypesFromObjRefactor(objToDecompose);
     return <div className="Pokemon-types ">
         {objToDecompose.map((obj: any, index: number) => 
             <div key={obj.type.name} >
