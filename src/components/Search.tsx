@@ -8,7 +8,7 @@ export interface SearchState {
     pokemonMachtingList: any; 
 }
 
-const NUMBER_OF_POKEMON = 3;
+const NUMBER_OF_POKEMON = 300;
 
 class Search extends React.Component<SearchProps, SearchState> {
     constructor(props: any) {
