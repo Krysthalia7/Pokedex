@@ -2,7 +2,17 @@ import * as React from "react";
 import { extractObjectFromObj, extractTypesFromObj } from '../services/ExtractorService';
 import Statistics from './Statistics';
 
-export interface PokemonProps { pokemon: any }
+export type Pokemon = {
+    id: number
+    url: string
+    name: string
+    image: string
+    pokemonType: Array<object>
+    pokemonStats: Array<object>
+};
+
+export interface PokemonProps { pokemon: Pokemon }
+
 export interface PokemonState { 
     id: number;
     myPicture: string;
@@ -10,8 +20,8 @@ export interface PokemonState {
     myStats: Array<object>; 
 }
 
-class Pokemon extends React.Component<PokemonProps, PokemonState> {
-    constructor(props: any) {
+class PokemonComponent extends React.Component<PokemonProps, PokemonState> {
+    constructor(props: PokemonProps) {
         super(props);
         this.state = {
             id: 0,
@@ -23,7 +33,7 @@ class Pokemon extends React.Component<PokemonProps, PokemonState> {
     }
 
     componentDidMount(): void { this.fetchData(this.props.pokemon.url); }
-    componentDidUpdate(prevProps: any): void {
+    componentDidUpdate(prevProps: PokemonProps): void {
         const newProps = this.props.pokemon;
         if (newProps !== prevProps.pokemon) {
             this.fetchData(newProps.url);
@@ -67,4 +77,4 @@ class Pokemon extends React.Component<PokemonProps, PokemonState> {
     }
 }
 
-export default Pokemon;
+export default PokemonComponent;
