@@ -8,6 +8,8 @@ export interface SearchState {
     pokemonMachtingList: any; 
 }
 
+const NUMBER_OF_POKEMON = 3;
+
 class Search extends React.Component<SearchProps, SearchState> {
     constructor(props: any) {
         super(props);
@@ -22,7 +24,7 @@ class Search extends React.Component<SearchProps, SearchState> {
     }
 
     componentDidMount(): void {
-        fetch(`https://pokeapi.co/api/v2/pokemon?limit=300`)
+        fetch(`https://pokeapi.co/api/v2/pokemon?limit=`+NUMBER_OF_POKEMON)
             .then((response) => {
                 return response.json();
             }).then((json) => {
